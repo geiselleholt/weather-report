@@ -5,12 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet " href="./styles/index.css" <title>Weather Report</title>
+    <link rel="stylesheet " href="./styles/index.css">
+    <title>Weather Report</title>
 </head>
 
 <body>
-
-
+    <header id="city-name">
+        <h1>Weather Report</h1>
+        <p>Temperature of<span id=city-span></span></p>
+    </header>
+    <section id="city-section">
+        <input type="text" id="city-name" value="Denver">
+        <!-- append div from Dom??? -->
+    </section>
+    <section>
+        <h2>Temperature</h2>
+        <input id="temp"></input>
+    </section>
+    <section id='sky-section'>
+        <h2>Sky</h2>
+        <select id="sky-select"></select>
+    </section>
+    <script src="src/index.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
 
