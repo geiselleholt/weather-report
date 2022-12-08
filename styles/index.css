@@ -1,4 +1,74 @@
 body {
-    background-color: black;
+    font-family: sans-serif;
+    background-color: lightskyblue;
     color: blueviolet;
+}
+
+
+header {
+background-color:cornsilk;
+color: blueviolet;
+text-align: center;
+border-radius: 50px;
+padding-block: 30px;
+}
+
+#city-name {
+font-size:medium;
+}
+
+#city-section {
+font-size: larger;
+background-color:cornsilk;
+border-radius: 50px;
+padding-block: 10px;
+text-align: center;
+}
+
+#city-reset {
+
+}
+
+.city-reset-btn {
+
+}
+
+#city-section {
+
+}
+
+#temp-section {
+background-color:cornsilk;
+border-radius: 50px;
+padding-block: 10px;
+text-align: center;
+}
+
+.temp-controls {
+font-size:x-large;
+}
+
+#increaseTempControl {
+
+}
+
+#decreaseTempControl {
+
+}
+
+
+#tempValue {
+font-size:xx-large;
+}
+
+#sky-select {
+background-color:cornsilk;
+border-radius: 50px;
+padding-block: 10px;
+text-align: center;
+
+}
+
+#sky-view {
+font-size:medium;
 }

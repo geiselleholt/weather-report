@@ -11,31 +11,36 @@
 
 <body>
     <header id="city-name">
-        <h1>Weather Report</h1>
-        <p>Temperature of<span id=city-span></span></p>
+        <h1>J&G Weather Report</h1>
+        <p>It's always sunny in ☀️<span id=city-span></span>☀️</p>
     </header>
     <section id="city-section">
+        <p>🌇 Pick a city 🏙️ Any city 🌉</p>
         <input type="text" id="city-name" value="Denver">
-        <button id="city-reset" class="city-reset-btn">Reset</button>
+        <button id="city-reset-btn">Reset Temp</button>
         <!-- append div from Dom??? -->
     </section>
     <section id="temp-section">
         <h2>Temperature</h2>
-        <div class="temp-controls"> <span id="increaseTempControl">⬆️</span> <span id="tempValue"
-                class="green">57</span> <span id="decreaseTempControl">⬇️</span> </div>
-        <button id="currentTempButton">Get Realtime Temperature</button>
-        <input id="temp-input"></input>
+        <div class="temp-controls"> 
+            <button id="increaseTempControl">👆</button> 
+            <button id="decreaseTempControl">👇</button> 
+        </div>
+        <div id="tempValue" >70</div> 
+
+        <button id="currentTempButton">Get Realtime Temp</button>
+        <!-- <input id="temp-input"></input> -->
     </section>
     <section id='sky-select'>
         <h2>Sky</h2>
-        <slot>
-            <option>Sunny</option>
-            <option>Cloudy</option>
-            <option>Rainy</option>
-            <option>Snowy</option>
-        </slot>
+        <select id="sky-view">
+            <option>The Heat Is On</option>
+            <option>Kickin the couds away</option>
+            <option>Rain on me</option>
+            <option>Ice Ice Baby</option>
+        </select>
     </section>
-    <select id="sky-view"></select>
+    
     <script src="src/index.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
 </body>
