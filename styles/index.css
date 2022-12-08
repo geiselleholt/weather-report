@@ -58,3 +58,7 @@ text-align: center;
 #emojis {
     font-size: xx-large;
 }
+
+.header__city-name:after, .header__city-name:before {
+    content: "✨";
+}

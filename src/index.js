@@ -1,10 +1,14 @@
 'use strict';
 
-
+const state = {
+  city: 'Denver',
+  lat: 0.0,
+  long: 0.0,
+  temp: 72,
+};
 // WAVE 1 ///////
-let tempValue = 70;
-const tempControl = document.querySelector("#tempValue");
-
+let tempValue = state.temp;
+const tempControl = document.querySelector('#tempValue');
 
 const increaseTemp = () => {
   tempValue += 1;
@@ -18,35 +22,33 @@ const decreaseTemp = () => {
 
 const changeTempColor = () => {
   if (tempValue >= 80) {
-    tempControl.style.color = "red";
+    tempControl.style.color = 'red';
   } else if (tempValue >= 70 && tempValue <= 79) {
-    tempControl.style.color = "orange";
+    tempControl.style.color = 'orange';
   } else if (tempValue >= 60 && tempValue <= 69) {
-    tempControl.style.color = "yellow";
+    tempControl.style.color = 'yellow';
   } else if (tempValue >= 50 && tempValue <= 59) {
-    tempControl.style.color = "green";
+    tempControl.style.color = 'green';
   } else if (tempValue <= 49) {
-    tempControl.style.color = "teal";
+    tempControl.style.color = 'teal';
   }
 };
 
+const upButton = document.querySelector('#increaseTempControl');
+upButton.addEventListener('click', increaseTemp);
 
-const upButton = document.querySelector("#increaseTempControl");
-upButton.addEventListener("click", increaseTemp);
+const downButton = document.querySelector('#decreaseTempControl');
+downButton.addEventListener('click', decreaseTemp);
 
-const downButton = document.querySelector("#decreaseTempControl");
-downButton.addEventListener("click", decreaseTemp);
+const changeTempColorUp = document.querySelector('#increaseTempControl');
+changeTempColorUp.addEventListener('click', changeTempColor);
 
-const changeTempColorUp = document.querySelector("#increaseTempControl");
-changeTempColorUp.addEventListener("click", changeTempColor);
-
-const changeTempColorDown = document.querySelector("#decreaseTempControl");
-changeTempColorDown.addEventListener("click", changeTempColor);
-
+const changeTempColorDown = document.querySelector('#decreaseTempControl');
+changeTempColorDown.addEventListener('click', changeTempColor);
 
 // WAVE 2 //////
 
-const emojiControl = document.querySelector("#emojis");
+const emojiControl = document.querySelector('#emojis');
 
 const changeLandscape = () => {
   if (tempValue >= 80) {
@@ -62,27 +64,31 @@ const changeLandscape = () => {
   }
 };
 
-const changeLandscapeUp = document.querySelector("#increaseTempControl");
-changeLandscapeUp.addEventListener("click", changeLandscape);
+const changeLandscapeUp = document.querySelector('#increaseTempControl');
+changeLandscapeUp.addEventListener('click', changeLandscape);
 
-const changeLandscapeDown = document.querySelector("#decreaseTempControl");
-changeLandscapeDown.addEventListener("click", changeLandscape);
+const changeLandscapeDown = document.querySelector('#decreaseTempControl');
+changeLandscapeDown.addEventListener('click', changeLandscape);
 
+// Wave 3 /////
+//1.An element that displays the city name
+//2.An element that contains an <input type="text"> element, used to rename the city
+let city = state.city;
 
-
-// Wave 3 ///////
-
-const headerCityControl = document.querySelector("#headerCity");
-const inputCityValue = document.querySelector("#inputCity").value;
-let headerCity = inputCityValue;
+// let inputCity = inputCityValue;
 
 const changeCity = () => {
-  headerCityControl.textContent = `${headerCity}`;
+  const inputCityValue = document.querySelector('#inputCity').value;
+  const cityHeader = document.querySelector('#cityName');
+  state.city = cityHeader;
+  cityHeader.textContent = city;
 };
 
-const changeCityName = document.querySelector("#inputCity");
-changeCityName.addEventListener("input", changeCity);
-
-
-
-"DOMContentLoaded";
+const resetCity = () => {
+  const changeCityName = document.querySelector('#inputCity');
+  inputCity.value = city;
+  changeCity();
+};
+changeCity();
+changeCityName.addEventListener('input', );
+('DOMContentLoaded');
