@@ -76,19 +76,26 @@ changeLandscapeDown.addEventListener('click', changeLandscape);
 let city = state.city;
 
 // let inputCity = inputCityValue;
+const inputCityValue = document.querySelector('#inputCity').value;
+const inputCity = document.querySelector('#inputCity');
+const cityName = document.querySelector('#cityName');
+const cityButton = document.getElementById('cityButton');
 
 const changeCity = () => {
-  const inputCityValue = document.querySelector('#inputCity').value;
-  const cityHeader = document.querySelector('#cityName');
-  state.city = cityHeader;
-  cityHeader.textContent = city;
+  const changeCityInput = document.querySelector('#inputCity');
+  console.log('input city: ', inputCity);
+  console.log('state.city', state.city);
+  console.log('inputCityValue', inputCityValue);
+  console.log('changeCityInput: ', changeCityInput.value);
+  state.city = changeCityInput.value;
+  cityName.textContent = state.city;
 };
 
 const resetCity = () => {
-  const changeCityName = document.querySelector('#inputCity');
-  inputCity.value = city;
-  changeCity();
+  const changeCityInput = document.querySelector('#inputCity');
+  changeCityInput.value = 'Denver';
+  cityName.textContent = 'Denver';
 };
-changeCity();
-changeCityName.addEventListener('input', );
-('DOMContentLoaded');
+
+inputCity.addEventListener('input', changeCity);
+cityButton.addEventListener('click', resetCity)('DOMContentLoaded');
