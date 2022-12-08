@@ -1,37 +1,88 @@
 'use strict';
 
-const state = {
-  tempValue: 70,
-};
+
+// WAVE 1 ///////
+let tempValue = 70;
+const tempControl = document.querySelector("#tempValue");
+
 
 const increaseTemp = () => {
-  state.tempValue += 1;
-  const increaseTempControl = document.querySelector("#tempValue")
-  increaseTempControl.textContent = `${state.tempValue}`;
+  tempValue += 1;
+  tempControl.textContent = `${tempValue}`;
 };
 
 const decreaseTemp = () => {
-  state.tempValue -= 1;
-  const decreaseTempControl = document.querySelector("#tempValue")
-  decreaseTempControl.textContent = `${state.tempValue}`;
+  tempValue -= 1;
+  tempControl.textContent = `${tempValue}`;
 };
 
-const registerEventHandlers = () => {
-  const upButton = document.querySelector("#increaseTempControl");
-  upButton.addEventListener("click", increaseTemp);
-
-  const downButton = document.querySelector("#decreaseTempControl");
-  downButton.addEventListener("click", decreaseTemp);
-
-  const 
-  btn.addEventListener('click', changeColor)
+const changeTempColor = () => {
+  if (tempValue >= 80) {
+    tempControl.style.color = "red";
+  } else if (tempValue >= 70 && tempValue <= 79) {
+    tempControl.style.color = "orange";
+  } else if (tempValue >= 60 && tempValue <= 69) {
+    tempControl.style.color = "yellow";
+  } else if (tempValue >= 50 && tempValue <= 59) {
+    tempControl.style.color = "green";
+  } else if (tempValue <= 49) {
+    tempControl.style.color = "teal";
+  }
 };
 
-// Temperature (F)	Color
-// 80+	Red
-// 70-79	Orange
-// 60-69	Yellow
-// 50-59	Green
-// 49 or below	Teal
 
-// document.addEventListener("DOMContentLoaded", registerEventHandlers);
+const upButton = document.querySelector("#increaseTempControl");
+upButton.addEventListener("click", increaseTemp);
+
+const downButton = document.querySelector("#decreaseTempControl");
+downButton.addEventListener("click", decreaseTemp);
+
+const changeTempColorUp = document.querySelector("#increaseTempControl");
+changeTempColorUp.addEventListener("click", changeTempColor);
+
+const changeTempColorDown = document.querySelector("#decreaseTempControl");
+changeTempColorDown.addEventListener("click", changeTempColor);
+
+
+// WAVE 2 //////
+
+const emojiControl = document.querySelector("#emojis");
+
+const changeLandscape = () => {
+  if (tempValue >= 80) {
+    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
+  } else if (tempValue >= 70 && tempValue <= 79) {
+    emojiControl.textContent = '😍😍😍😍😍😍😍';
+  } else if (tempValue >= 60 && tempValue <= 69) {
+    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
+  } else if (tempValue >= 50 && tempValue <= 59) {
+    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
+  } else if (tempValue <= 49) {
+    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
+  }
+};
+
+const changeLandscapeUp = document.querySelector("#increaseTempControl");
+changeLandscapeUp.addEventListener("click", changeLandscape);
+
+const changeLandscapeDown = document.querySelector("#decreaseTempControl");
+changeLandscapeDown.addEventListener("click", changeLandscape);
+
+
+
+// Wave 3 ///////
+
+const headerCityControl = document.querySelector("#headerCity");
+const inputCityValue = document.querySelector("#inputCity").value;
+let headerCity = inputCityValue;
+
+const changeCity = () => {
+  headerCityControl.textContent = `${headerCity}`;
+};
+
+const changeCityName = document.querySelector("#inputCity");
+changeCityName.addEventListener("input", changeCity);
+
+
+
+"DOMContentLoaded";
