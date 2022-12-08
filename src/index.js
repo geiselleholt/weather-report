@@ -8,7 +8,6 @@ const increaseTemp = () => {
   state.tempValue += 1;
   const increaseTempControl = document.querySelector("#tempValue")
   increaseTempControl.textContent = `${state.tempValue}`;
-  console.log('anything')
 };
 
 const decreaseTemp = () => {
@@ -24,6 +23,15 @@ const registerEventHandlers = () => {
   const downButton = document.querySelector("#decreaseTempControl");
   downButton.addEventListener("click", decreaseTemp);
 
+  const 
+  btn.addEventListener('click', changeColor)
 };
 
-document.addEventListener("DOMContentLoaded", registerEventHandlers);
+// Temperature (F)	Color
+// 80+	Red
+// 70-79	Orange
+// 60-69	Yellow
+// 50-59	Green
+// 49 or below	Teal
+
+// document.addEventListener("DOMContentLoaded", registerEventHandlers);
