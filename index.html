@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet " href="./styles/index.css">
-    <title>Weather Report</title>
+    <title>J&G Weather Report</title>
 </head>
 
 <body>
@@ -17,32 +17,33 @@
     <section id="city-section">
         <p>🌇 Pick a city 🏙️ Any city 🌉</p>
         <input type="text" id="inputCity" value="Denver">
-        <button id="cityButton">Reset Temp</button>
+        <button id="cityButton">Reset</button>
         <!-- append div from Dom??? -->
     </section>
     <section id="temp-section">
         <h2>Temperature</h2>
         <div> 
             <button id="increaseTempControl">👆</button> 
+            <div id="tempValue" >70</div> 
             <button id="decreaseTempControl">👇</button> 
         </div>
-        <div id="tempValue" >70</div> 
-
+        <div>_</div>
         <button id="currentTempButton">Get Realtime Temp</button>
         <!-- <input id="temp-input"></input> -->
     </section>
     <section id='sky-section'>
-        <h2>Sky</h2>
+        <h2>Sky's the limit</h2>
         <select id="sky-select">
             <option>The Heat Is On</option>
-            <option>Kickin the couds away</option>
+            <option>Chasing the clouds away</option>
             <option>Rain on me</option>
             <option>Ice Ice Baby</option>
         </select>
     </section>
     <section id='landscape-section'>
-        <h3>EmojiLand Lanscape</h3>
-        <p id="emojis">☀️🌈☀️🦄☀️🌈☀️</p>
+        <p id="emojiSky">☀️🌈☀️🦄☀️🌈☀️</p>
+        <h3>EmojiLand</h3>
+        <p id="emojis">🥵😍😶‍🌫️🤢🥶</p>
     </section>
     
     <script src="src/index.js"></script>

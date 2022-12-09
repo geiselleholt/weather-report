@@ -1,11 +1,14 @@
 'use strict';
 
+
 const state = {
+  temp: 72,
   city: 'Denver',
   lat: 0.0,
-  long: 0.0,
-  temp: 72,
+  lon: 0.0,
 };
+
+
 // WAVE 1 ///////
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
@@ -46,8 +49,8 @@ changeTempColorUp.addEventListener('click', changeTempColor);
 const changeTempColorDown = document.querySelector('#decreaseTempControl');
 changeTempColorDown.addEventListener('click', changeTempColor);
 
-// WAVE 2 //////
 
+// WAVE 2 //////
 const emojiControl = document.querySelector('#emojis');
 
 const changeLandscape = () => {
@@ -70,32 +73,70 @@ changeLandscapeUp.addEventListener('click', changeLandscape);
 const changeLandscapeDown = document.querySelector('#decreaseTempControl');
 changeLandscapeDown.addEventListener('click', changeLandscape);
 
+
 // Wave 3 /////
 //1.An element that displays the city name
 //2.An element that contains an <input type="text"> element, used to rename the city
 let city = state.city;
-
-// let inputCity = inputCityValue;
-const inputCityValue = document.querySelector('#inputCity').value;
-const inputCity = document.querySelector('#inputCity');
 const cityName = document.querySelector('#cityName');
-const cityButton = document.getElementById('cityButton');
 
 const changeCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
-  console.log('input city: ', inputCity);
-  console.log('state.city', state.city);
-  console.log('inputCityValue', inputCityValue);
-  console.log('changeCityInput: ', changeCityInput.value);
   state.city = changeCityInput.value;
   cityName.textContent = state.city;
 };
 
+const inputCity = document.querySelector('#inputCity');
+inputCity.addEventListener('input', changeCity);
+
+
+// Wave 4 ///////
+const kelvinToFarenheight = (temp) => {
+  return (temp - 273.15) * (9 / 5) + 32;
+};
+
+const getRealTemp = async () => {
+  const response = await axios.get('http://127.0.0.1:5000/weather', {
+      params: {
+        lat: state.lat,
+        lon: state.lon,
+      },
+    });
+  const weather = kelvinToFarenheight(response.data.main.temp);
+
+  tempValue = Math.round(weather);
+  tempControl.textContent = `${tempValue}`
+  // formatTempAndGarden();
+    
+};
+
+const getLatLon = async () => {
+  const response = await axios.get('http://127.0.0.1:5000/location', {
+      params: {
+          q: state.city,
+      },
+  });
+  state.lat = response.data[0].lat;
+  state.lon = response.data[0].lon;
+  getRealTemp();
+
+};
+
+const currentTempButton = document.querySelector('#currentTempButton');
+currentTempButton.addEventListener('click', getLatLon);
+
+
+// Wave 5 //////
+
+// formatTempAndGarden();
+
+
+// Wave 6  ///////
 const resetCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
 };
 
-inputCity.addEventListener('input', changeCity);
-cityButton.addEventListener('click', resetCity)('DOMContentLoaded');
+const cityButton = document.getElementById('cityButton');
+cityButton.addEventListener('click', resetCity);
