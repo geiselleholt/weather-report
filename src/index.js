@@ -119,26 +119,53 @@ const currentTempButton = document.querySelector('#currentTempButton');
 currentTempButton.addEventListener('click', getLatLon);
 
 // Wave 5 //////
-let sky;
-let color;
-const skySelect = document.getElementById('sky-select').value;
-const skySection = document.getElementById('sky-section');
-const emojiSky = document.getElementById('emoji-sky')
-const temperature = document.getElementById('tempValue')
-temperature.className = color;
-const changesky = () => {
+const changeSky = () => {
+  const skySelect = document.getElementById('sky-select').value;
+  const emojiSky = document.getElementById('emoji-sky');
+  let sky = '';
+  let skyColor = '';
   if (skySelect === 'The Heat Is On') {
-    emojiSky='☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️'
-  } else if (skySelect === 'Chasing the clouds away') {
-emojiSky='☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️'
-  } else if (skySelect === 'Rain on me') {
-    emojiSky='🌈🌧💧💧💧🌧💧💧💧🌧🌈'
+    sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
+    skyColor = 'yellow';
+  } else if (skySelect === 'Chasing the Clouds Away') {
+    sky = '☁️     ☁️   ☁️ ☀️ ☁️  ☁️';
+    skyColor = 'blue';
+  } else if (skySelect === 'Rain on Me') {
+    sky = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
+    skyColor = 'gray';
   } else if (skySelect === 'Ice Ice Baby') {
-    emojiSky='🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧'}
-  };
-  
-//Choose menu/button/trigger .addEventListener ('action',function)
-skySelect.addEventListener('change', changesky);
+    sky = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';
+    skyColor = 'black';
+  }
+  emojiSky.textContent = sky;
+  const landscapeContent = document.getElementById('landscape-section');
+  landscapeContent.classList = `landscape-content ${skyColor}`;
+};
+changeSky();
+const skySelect = document.getElementById('sky-select');
+skySelect.addEventListener('change', changeSky);
+
+// let sky;
+// let color;
+// const skySelect = document.getElementById('sky-select').value;
+// const landscapeContent = document.getElementsByClassName('landscpe-content');
+// const emojiSky = document.getElementById('emoji-sky');
+// const changesky = () => {
+//   if (skySelect === 'The Heat Is On') {
+//     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
+//   } else if (skySelect.textContent === 'Chasing the clouds away') {
+//     emojiSky.textContent = '☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️';
+//   } else if (skySelect.textContent === 'Rain on me') {
+//     emojiSky.textContent = '🌈🌧💧💧💧🌧💧💧💧🌧🌈';
+//   } else if (skySelect.textContent === 'Ice Ice Baby') {
+//     emojiSky.textContent = '🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧';
+//   }
+// };
+
+// const gardenContent = document.getElementsByClassName('landscape-content');
+// landscapeContent.classList = `landscape-content ${skyColor}`;
+
+// skySelect.addEventListener('change', changesky);
 
 // formatTempAndGarden();
 

@@ -44,7 +44,21 @@ header,
     background-color: lightskyblue;
     border-radius: 50px;
 }
-
+.garden__content {
+    min-height: 200px;
+    max-width: fit-content;
+    margin: auto;
+    padding: 2rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    border-radius: 8px;
+    font-size: 2em;
+    }
+    
+/* 
 .red {
     color: red;
 }
@@ -59,7 +73,7 @@ header,
 
 .teal {
     color: turquoise;
-}
+} */
 
 .hot {
     background-color: yellow;
