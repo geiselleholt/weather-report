@@ -1,13 +1,11 @@
 'use strict';
 
-
 const state = {
   temp: 72,
   city: 'Denver',
   lat: 0.0,
   lon: 0.0,
 };
-
 
 // WAVE 1 ///////
 let tempValue = state.temp;
@@ -49,7 +47,6 @@ changeTempColorUp.addEventListener('click', changeTempColor);
 const changeTempColorDown = document.querySelector('#decreaseTempControl');
 changeTempColorDown.addEventListener('click', changeTempColor);
 
-
 // WAVE 2 //////
 const emojiControl = document.querySelector('#emojis');
 
@@ -73,7 +70,6 @@ changeLandscapeUp.addEventListener('click', changeLandscape);
 const changeLandscapeDown = document.querySelector('#decreaseTempControl');
 changeLandscapeDown.addEventListener('click', changeLandscape);
 
-
 // Wave 3 /////
 //1.An element that displays the city name
 //2.An element that contains an <input type="text"> element, used to rename the city
@@ -89,7 +85,6 @@ const changeCity = () => {
 const inputCity = document.querySelector('#inputCity');
 inputCity.addEventListener('input', changeCity);
 
-
 // Wave 4 ///////
 const kelvinToFarenheight = (temp) => {
   return (temp - 273.15) * (9 / 5) + 32;
@@ -97,39 +92,55 @@ const kelvinToFarenheight = (temp) => {
 
 const getRealTemp = async () => {
   const response = await axios.get('http://127.0.0.1:5000/weather', {
-      params: {
-        lat: state.lat,
-        lon: state.lon,
-      },
-    });
+    params: {
+      lat: state.lat,
+      lon: state.lon,
+    },
+  });
   const weather = kelvinToFarenheight(response.data.main.temp);
 
   tempValue = Math.round(weather);
-  tempControl.textContent = `${tempValue}`
+  tempControl.textContent = `${tempValue}`;
   // formatTempAndGarden();
-    
 };
 
 const getLatLon = async () => {
   const response = await axios.get('http://127.0.0.1:5000/location', {
-      params: {
-          q: state.city,
-      },
+    params: {
+      q: state.city,
+    },
   });
   state.lat = response.data[0].lat;
   state.lon = response.data[0].lon;
   getRealTemp();
-
 };
 
 const currentTempButton = document.querySelector('#currentTempButton');
 currentTempButton.addEventListener('click', getLatLon);
 
-
 // Wave 5 //////
+let sky;
+let color;
+const skySelect = document.getElementById('sky-select').value;
+const skySection = document.getElementById('sky-section');
+const emojiSky = document.getElementById('emoji-sky')
+const temperature = document.getElementById('tempValue')
+temperature.className = color;
+const changesky = () => {
+  if (skySelect === 'The Heat Is On') {
+    emojiSky='☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️'
+  } else if (skySelect === 'Chasing the clouds away') {
+emojiSky='☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️'
+  } else if (skySelect === 'Rain on me') {
+    emojiSky='🌈🌧💧💧💧🌧💧💧💧🌧🌈'
+  } else if (skySelect === 'Ice Ice Baby') {
+    emojiSky='🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧'}
+  };
+  
+//Choose menu/button/trigger .addEventListener ('action',function)
+skySelect.addEventListener('change', changesky);
 
 // formatTempAndGarden();
-
 
 // Wave 6  ///////
 const resetCity = () => {
