@@ -15,11 +15,13 @@ const emojiControl = document.querySelector('#emojis');
 const increaseTemp = () => {
   tempValue += 1;
   tempControl.textContent = `${tempValue}`;
+  changeTempColorAndLandscape();
 };
 
 const decreaseTemp = () => {
   tempValue -= 1;
   tempControl.textContent = `${tempValue}`;
+  changeTempColorAndLandscape()
 };
 
 const changeTempColorAndLandscape = () => {
@@ -46,12 +48,6 @@ upButton.addEventListener('click', increaseTemp);
 
 const downButton = document.querySelector('#decreaseTempControl');
 downButton.addEventListener('click', decreaseTemp);
-
-const changeTempColorAndLandscapeUp = document.querySelector('#increaseTempControl');
-changeTempColorAndLandscape.addEventListener('click', changeTempColorAndLandscape);
-
-const changeTempColorAndLandscapeDown = document.querySelector('#decreaseTempControl');
-changeTempColorAndLandscape.addEventListener('click', changeTempColorAndLandscape);
 
 
 
@@ -92,7 +88,7 @@ const getRealTemp = async () => {
 const getLatLon = async () => {
   const response = await axios.get('http://127.0.0.1:5000/location', {
     params: {
-      q: state.city,
+      q: city,
     },
   });
   state.lat = response.data[0].lat;
@@ -100,8 +96,8 @@ const getLatLon = async () => {
   getRealTemp();
 };
 
-const currentTempButton = document.querySelector('#currentTempButton');
-currentTempButton.addEventListener('click', getLatLon);
+const realTempButton = document.querySelector('#realTempButton');
+realTempButton.addEventListener('click', getLatLon);
 
 
 

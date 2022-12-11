@@ -40,7 +40,7 @@ header,
 }
 
 #cityButton,
-#currentTempButton {
+#realTempButton {
     background-color: lightskyblue;
     border-radius: 50px;
 }
