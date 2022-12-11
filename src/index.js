@@ -126,22 +126,22 @@ const changeSky = () => {
   let skyColor = '';
   if (skySelect === 'The Heat Is On') {
     sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    skyColor = 'yellow';
+    skyColor = 'hot';
   } else if (skySelect === 'Chasing the Clouds Away') {
-    sky = '☁️     ☁️   ☁️ ☀️ ☁️  ☁️';
-    skyColor = 'blue';
-  } else if (skySelect === 'Rain on Me') {
-    sky = '🌧🌈⛈🌧🌧💧⛈🌧🌦🌧💧🌧🌧';
-    skyColor = 'gray';
+    sky = '☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️';
+    skyColor = 'perfect';
+  } else if (skySelect === 'Purple Rain') {
+    sky = '🌈🌧💧💧💧🌧💧💧💧🌧🌈';
+    skyColor = 'rainy';
   } else if (skySelect === 'Ice Ice Baby') {
-    sky = '🌨❄️🌨🌨❄️❄️🌨❄️🌨❄️❄️🌨🌨';
-    skyColor = 'black';
+    sky = '🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧';
+    skyColor = 'snowy';
   }
   emojiSky.textContent = sky;
-  const landscapeContent = document.getElementById('landscape-section');
-  landscapeContent.classList = `landscape-content ${skyColor}`;
+  const landscape = document.getElementById('landscapeContent');
+  landscape.classList = `landscape-content ${skyColor}`;
 };
-changeSky();
+
 const skySelect = document.getElementById('sky-select');
 skySelect.addEventListener('change', changeSky);
 
@@ -162,7 +162,7 @@ skySelect.addEventListener('change', changeSky);
 //   }
 // };
 
-// const gardenContent = document.getElementsByClassName('landscape-content');
+// const landscapeContent = document.getElementsByClassName('landscape-content');
 // landscapeContent.classList = `landscape-content ${skyColor}`;
 
 // skySelect.addEventListener('change', changesky);
