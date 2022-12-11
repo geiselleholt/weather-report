@@ -113,6 +113,18 @@ const getLatLon = async () => {
   state.lat = response.data[0].lat;
   state.lon = response.data[0].lon;
   getRealTemp();
+
+  if (tempValue >= 80) {
+    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
+  } else if (tempValue >= 70 && tempValue <= 79) {
+    emojiControl.textContent = '😍😍😍😍😍😍😍';
+  } else if (tempValue >= 60 && tempValue <= 69) {
+    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
+  } else if (tempValue >= 50 && tempValue <= 59) {
+    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
+  } else if (tempValue <= 49) {
+    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
+  }
 };
 
 const currentTempButton = document.querySelector('#currentTempButton');
