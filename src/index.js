@@ -1,15 +1,16 @@
 'use strict';
 
 const state = {
-  temp: 72,
+  temp: 70,
   city: 'Denver',
   lat: 0.0,
   lon: 0.0,
 };
 
-// WAVE 1 ///////
+// WAVE 1 and WAVE 2  ///////
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
+const emojiControl = document.querySelector('#emojis');
 
 const increaseTemp = () => {
   tempValue += 1;
@@ -21,16 +22,21 @@ const decreaseTemp = () => {
   tempControl.textContent = `${tempValue}`;
 };
 
-const changeTempColor = () => {
+const changeTempColorAndLandscape = () => {
   if (tempValue >= 80) {
     tempControl.style.color = 'red';
+    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
   } else if (tempValue >= 70 && tempValue <= 79) {
+    emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
   } else if (tempValue >= 60 && tempValue <= 69) {
+    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'yellow';
   } else if (tempValue >= 50 && tempValue <= 59) {
+    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
   } else if (tempValue <= 49) {
+    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'teal';
   }
 };
@@ -41,49 +47,28 @@ upButton.addEventListener('click', increaseTemp);
 const downButton = document.querySelector('#decreaseTempControl');
 downButton.addEventListener('click', decreaseTemp);
 
-const changeTempColorUp = document.querySelector('#increaseTempControl');
-changeTempColorUp.addEventListener('click', changeTempColor);
+const changeTempColorAndLandscapeUp = document.querySelector('#increaseTempControl');
+changeTempColorAndLandscape.addEventListener('click', changeTempColorAndLandscape);
 
-const changeTempColorDown = document.querySelector('#decreaseTempControl');
-changeTempColorDown.addEventListener('click', changeTempColor);
+const changeTempColorAndLandscapeDown = document.querySelector('#decreaseTempControl');
+changeTempColorAndLandscape.addEventListener('click', changeTempColorAndLandscape);
 
-// WAVE 2 //////
-const emojiControl = document.querySelector('#emojis');
 
-const changeLandscape = () => {
-  if (tempValue >= 80) {
-    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
-  } else if (tempValue >= 70 && tempValue <= 79) {
-    emojiControl.textContent = '😍😍😍😍😍😍😍';
-  } else if (tempValue >= 60 && tempValue <= 69) {
-    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
-  } else if (tempValue >= 50 && tempValue <= 59) {
-    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
-  } else if (tempValue <= 49) {
-    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
-  }
-};
 
-const changeLandscapeUp = document.querySelector('#increaseTempControl');
-changeLandscapeUp.addEventListener('click', changeLandscape);
-
-const changeLandscapeDown = document.querySelector('#decreaseTempControl');
-changeLandscapeDown.addEventListener('click', changeLandscape);
-
-// Wave 3 /////
-//1.An element that displays the city name
-//2.An element that contains an <input type="text"> element, used to rename the city
+// WAVE 3 /////////
 let city = state.city;
 const cityName = document.querySelector('#cityName');
 
 const changeCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
-  state.city = changeCityInput.value;
-  cityName.textContent = state.city;
+  city = changeCityInput.value;
+  cityName.textContent = city;
 };
 
 const inputCity = document.querySelector('#inputCity');
 inputCity.addEventListener('input', changeCity);
+
+
 
 // Wave 4 ///////
 const kelvinToFarenheight = (temp) => {
@@ -101,7 +86,7 @@ const getRealTemp = async () => {
 
   tempValue = Math.round(weather);
   tempControl.textContent = `${tempValue}`;
-  // formatTempAndGarden();
+  changeTempColorAndLandscape();
 };
 
 const getLatLon = async () => {
@@ -113,22 +98,12 @@ const getLatLon = async () => {
   state.lat = response.data[0].lat;
   state.lon = response.data[0].lon;
   getRealTemp();
-
-  if (tempValue >= 80) {
-    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
-  } else if (tempValue >= 70 && tempValue <= 79) {
-    emojiControl.textContent = '😍😍😍😍😍😍😍';
-  } else if (tempValue >= 60 && tempValue <= 69) {
-    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
-  } else if (tempValue >= 50 && tempValue <= 59) {
-    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
-  } else if (tempValue <= 49) {
-    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
-  }
 };
 
 const currentTempButton = document.querySelector('#currentTempButton');
 currentTempButton.addEventListener('click', getLatLon);
+
+
 
 // Wave 5 //////
 const changeSky = () => {
@@ -157,31 +132,9 @@ const changeSky = () => {
 const skySelect = document.getElementById('sky-select');
 skySelect.addEventListener('change', changeSky);
 
-// let sky;
-// let color;
-// const skySelect = document.getElementById('sky-select').value;
-// const landscapeContent = document.getElementsByClassName('landscpe-content');
-// const emojiSky = document.getElementById('emoji-sky');
-// const changesky = () => {
-//   if (skySelect === 'The Heat Is On') {
-//     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-//   } else if (skySelect.textContent === 'Chasing the clouds away') {
-//     emojiSky.textContent = '☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️';
-//   } else if (skySelect.textContent === 'Rain on me') {
-//     emojiSky.textContent = '🌈🌧💧💧💧🌧💧💧💧🌧🌈';
-//   } else if (skySelect.textContent === 'Ice Ice Baby') {
-//     emojiSky.textContent = '🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧';
-//   }
-// };
 
-// const landscapeContent = document.getElementsByClassName('landscape-content');
-// landscapeContent.classList = `landscape-content ${skyColor}`;
 
-// skySelect.addEventListener('change', changesky);
-
-// formatTempAndGarden();
-
-// Wave 6  ///////
+// WAVE 6 /////////
 const resetCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
   changeCityInput.value = 'Denver';
