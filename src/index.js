@@ -1,3 +1,6 @@
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
+
 'use strict';
 
 const state = {
@@ -72,7 +75,7 @@ const kelvinToFarenheight = (temp) => {
 };
 
 const getRealTemp = async () => {
-  const response = await axios.get('http://127.0.0.1:5000/weather', {
+  const response = await axios.get('https://geiselles-weather-report.herokuapp.com/weather', {
     params: {
       lat: state.lat,
       lon: state.lon,
@@ -86,7 +89,7 @@ const getRealTemp = async () => {
 };
 
 const getLatLon = async () => {
-  const response = await axios.get('http://127.0.0.1:5000/location', {
+  const response = await axios.get('https://geiselles-weather-report.herokuapp.com/location', {
     params: {
       q: city,
     },
