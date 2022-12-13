@@ -108,6 +108,7 @@ realTempButton.addEventListener('click', getLatLon);
 const changeSky = () => {
   const skySelect = document.getElementById('sky-select').value;
   const emojiSky = document.getElementById('emoji-sky');
+  
   let sky = '';
   let skyColor = '';
   if (skySelect === 'The Heat Is On') {
