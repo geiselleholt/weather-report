@@ -108,20 +108,20 @@ realTempButton.addEventListener('click', getLatLon);
 const changeSky = () => {
   const skySelect = document.getElementById('sky-select').value;
   const emojiSky = document.getElementById('emoji-sky');
-  
+
   let sky = '';
   let skyColor = '';
   if (skySelect === 'The Heat Is On') {
     sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
     skyColor = 'hot';
   } else if (skySelect === 'Chasing the Clouds Away') {
-    sky = '☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️';
+    sky = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'perfect';
   } else if (skySelect === 'Purple Rain') {
-    sky = '🌈🌧💧💧💧🌧💧💧💧🌧🌈';
+    sky = '🌧💧💧💧🌧💧💧💧🌧';
     skyColor = 'rainy';
   } else if (skySelect === 'Ice Ice Baby') {
-    sky = '🌧⛈🌧🌧💧🌧🌦🌧💧🌧🌧';
+    sky = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'snowy';
   }
   emojiSky.textContent = sky;
