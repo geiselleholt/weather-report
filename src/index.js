@@ -11,6 +11,8 @@ const state = {
 };
 
 // WAVE 1 and WAVE 2  ///////
+let sky = '';
+let skyColor = '';
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
 const emojiControl = document.querySelector('#emojis');
@@ -119,8 +121,7 @@ const changeSky = () => {
   const skySelect = document.getElementById('sky-select').value;
   const emojiSky = document.getElementById('emoji-sky');
 
-  let sky = '';
-  let skyColor = '';
+
   if (skySelect === 'The Heat Is On') {
     sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
     skyColor = 'hot';
