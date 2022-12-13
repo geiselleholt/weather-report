@@ -24,7 +24,6 @@ header,
     background-color: green;
     border-radius: 10px;
     text-align: center;
-    color: black;
     font-size: x-large;
 }
 
@@ -65,13 +64,13 @@ header,
 }
 
 .perfect {
-    background-color: white;
+    background-color: rgb(255, 255, 252);
 }
 
 .rainy {
-    background-color: silver;
+    background-color: rgb(93, 71, 218);
 }
 
 .snowy {
-    background-color: skyblue;
+    background-color: rgb(9, 23, 41);
 }
