@@ -18,7 +18,6 @@ header,
     margin-bottom: 70px;
     border-top-right-radius: 80%;
     border-bottom-left-radius: 40%;
-    /* text-align: center; */
 }
 
 #landscape-section {
@@ -66,13 +65,13 @@ header,
 }
 
 .perfect {
-    background-color: rgb(255, 255, 252);
+    background-color: white;
 }
 
 .rainy {
-    background-color: rgb(93, 71, 218);
+    background-color: silver;
 }
 
 .snowy {
-    background-color: rgb(9, 23, 41);
+    background-color: skyblue;
 }
