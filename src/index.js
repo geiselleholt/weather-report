@@ -31,18 +31,28 @@ const changeTempColorAndLandscape = () => {
   if (tempValue >= 80) {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
+    sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
+    skyColor = 'hot';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
+    sky = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
+    skyColor = 'perfect';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'yellow';
+    sky = '🌧💧💧💧🌧💧💧💧🌧';
+    skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
+    sky = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
+    skyColor = 'snowy';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'teal';
+    sky = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
+    skyColor = 'snowy';
   }
 };
 
