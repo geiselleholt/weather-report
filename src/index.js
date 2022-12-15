@@ -14,6 +14,7 @@ const state = {
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
 const emojiControl = document.querySelector('#emojis');
+const emojiSky = document.getElementById('emoji-sky');
 
 const increaseTemp = () => {
   tempValue += 1;
@@ -37,7 +38,7 @@ const changeTempColorAndLandscape = () => {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor = 'perfect';
+    skyColor.style.backgroundcolor = 'rgb(255, 255, 252)';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'yellow';
@@ -119,7 +120,6 @@ let skyColor = '';
 
 const changeSky = () => {
   const skySelectValue = document.getElementById('sky-select').value;
-  const emojiSky = document.getElementById('emoji-sky');
 
 
   if (skySelectValue === 'The Heat Is On') {
@@ -150,6 +150,8 @@ const resetCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
+  emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
+  skyColor = "green"
 };
 
 const cityButton = document.getElementById('cityButton');
