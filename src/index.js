@@ -11,8 +11,6 @@ const state = {
 };
 
 // WAVE 1 and WAVE 2  ///////
-let sky = '';
-let skyColor = '';
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
 const emojiControl = document.querySelector('#emojis');
@@ -33,27 +31,27 @@ const changeTempColorAndLandscape = () => {
   if (tempValue >= 80) {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
-    sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    skyColor = 'hot';
+    emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
+    skyColor.style.backgroundcolor = 'red';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
-    sky = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
+    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'perfect';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'yellow';
-    sky = '🌧💧💧💧🌧💧💧💧🌧';
+    emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
     skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
-    sky = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
+    emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
     skyColor = 'snowy';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'teal';
-    sky = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
+    emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'snowy';
   }
 };
@@ -117,25 +115,27 @@ realTempButton.addEventListener('click', getLatLon);
 
 
 // Wave 5 //////
+let skyColor = '';
+
 const changeSky = () => {
-  const skySelect = document.getElementById('sky-select').value;
+  const skySelectValue = document.getElementById('sky-select').value;
   const emojiSky = document.getElementById('emoji-sky');
 
 
-  if (skySelect === 'The Heat Is On') {
-    sky = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
+  if (skySelectValue === 'The Heat Is On') {
+    emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
     skyColor = 'hot';
-  } else if (skySelect === 'Chasing the Clouds Away') {
-    sky = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
+  } else if (skySelectValue === 'Chasing the Clouds Away') {
+    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'perfect';
-  } else if (skySelect === 'Purple Rain') {
-    sky = '🌧💧💧💧🌧💧💧💧🌧';
+  } else if (skySelectValue === 'Purple Rain') {
+    emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
     skyColor = 'rainy';
-  } else if (skySelect === 'Ice Ice Baby') {
-    sky = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
+  } else if (skySelectValue === 'Ice Ice Baby') {
+    emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'snowy';
   }
-  emojiSky.textContent = sky;
+
   const landscape = document.getElementById('landscapeContent');
   landscape.classList = `landscape-content ${skyColor}`;
 };
