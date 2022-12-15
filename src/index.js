@@ -159,7 +159,7 @@ const resetCity = () => {
   const changeCityInput = document.querySelector('#inputCity');
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
-  emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
+  emojiSky.textContent = "☀️☀️🌈☀️✈️☀️🌈☀️☀️🌈☀️✈️☀️🌈☀️";
   emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
   tempControl.textContent = '70'
   skyColor = "green"
