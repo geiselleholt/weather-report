@@ -35,12 +35,12 @@ const changeTempColorAndLandscape = () => {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    landscapeSection.body.style.backgroundColor = 'red';
+    landscapeSection = 'hot';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
     emojiSky.textContent = '🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️';
-    landscapeSection.body.style.backgroundColor = 'rgb(255, 255, 252)';
+    landscapeSection = 'perfect';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'greenyellow';
@@ -160,7 +160,7 @@ const resetCity = () => {
   emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
   landscapeSection.body.style.backgroundColor = "green"
   emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
-  tempValue = 70
+  tempControl.textContent = '70'
 };
 
 const cityButton = document.getElementById('cityButton');
