@@ -138,9 +138,10 @@ const changeSky = () => {
     skyColor = 'snowy';
   }
 
-  const landscape = document.getElementById('landscapeContent');
-  landscape.classList = `landscape-content ${skyColor}`;
 };
+
+const landscape = document.getElementById('landscapeContent');
+landscape.classList = `landscape-content ${skyColor}`;
 
 const skySelect = document.getElementById('sky-select');
 skySelect.addEventListener('change', changeSky);
@@ -153,7 +154,9 @@ const resetCity = () => {
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
   emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
-  skyColor = "green"
+  landscapeSection.body.style.color = "green"
+  emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
+  tempControl.textContent = 70
 };
 
 const cityButton = document.getElementById('cityButton');
