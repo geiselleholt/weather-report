@@ -163,7 +163,7 @@ const resetCity = () => {
   emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
   tempControl.textContent = '70'
   skyColor = "green"
-  tempControl.style.color = 'cornsilk';
+  tempControl.style.color = 'cornflowerblue';
 
   const landscape = document.getElementById('landscapeContent');
   landscape.classList = `landscape-content ${skyColor}`;
