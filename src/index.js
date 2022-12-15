@@ -36,27 +36,27 @@ const changeTempColorAndLandscape = () => {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    skyColor = 'hot';
+    skyColor = 'red';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
     emojiSky.textContent = '🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️';
-    skyColor = 'perfect';
+    skyColor = 'yellow';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'purple';
     emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
-    skyColor = 'rainy';
+    skyColor = 'purple';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤧🤧🤧🤧🤧🤧🤧';
     tempControl.style.color = 'green';
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor = 'snowy';
+    skyColor = 'grey';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'blue';
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
-    skyColor = 'snowy';
+    skyColor = 'white';
   }
 
   const landscape = document.getElementById('landscapeContent');
@@ -128,19 +128,19 @@ const changeSky = () => {
 
   if (skySelectValue === 'The Heat Is On') {
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    skyColor = 'hot';
+    skyColor = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
   } else if (skySelectValue === 'Chasing the Clouds Away') {
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor = 'perfect';
+    skyColor = 'yellow';
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
   } else if (skySelectValue === 'Purple Rain') {
     emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
-    skyColor = 'rainy';
+    skyColor = 'purple';
     emojiControl.textContent = '🤧🤧🤧🤧🤧🤧🤧';
   } else if (skySelectValue === 'Ice Ice Baby') {
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
-    skyColor = 'snowy';
+    skyColor = 'white';
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
   }
   const landscape = document.getElementById('landscapeContent');
