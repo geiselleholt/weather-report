@@ -33,25 +33,25 @@ const changeTempColorAndLandscape = () => {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    skyColor.style.backgroundcolor = 'red';
+    skyColor.body.style.color = 'red';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
-    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor.style.backgroundcolor = 'rgb(255, 255, 252)';
+    emojiSky.textContent = '🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️';
+    skyColor.body.style.color = 'rgb(255, 255, 252)';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
-    tempControl.style.color = 'yellow';
-    emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
+    tempControl.style.color = 'greenyellow';
+    emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
     skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
-    emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
+    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'snowy';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
-    tempControl.style.color = 'teal';
+    tempControl.style.color = 'blue';
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'snowy';
   }
