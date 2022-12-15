@@ -16,7 +16,7 @@ let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
 const emojiControl = document.querySelector('#emojis');
 const emojiSky = document.getElementById('emoji-sky');
-const landscapeSection = document.getElementById('landscape-section');
+const landscape = document.getElementById('landscapeContent');
 
 
 const increaseTemp = () => {
@@ -34,32 +34,31 @@ const decreaseTemp = () => {
 const changeTempColorAndLandscape = () => {
   if (tempValue >= 80) {
     tempControl.style.color = 'red';
-    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
     skyColor = 'red';
+    emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
   } else if (tempValue >= 70 && tempValue <= 79) {
-    emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
     emojiSky.textContent = '🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️';
     skyColor = 'yellow';
+    emojiControl.textContent = '😍😍😍😍😍😍😍';
   } else if (tempValue >= 60 && tempValue <= 69) {
-    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'purple';
     emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
     skyColor = 'purple';
+    emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
   } else if (tempValue >= 50 && tempValue <= 59) {
+    tempControl.style.color = 'grey';
     emojiControl.textContent = '🤧🤧🤧🤧🤧🤧🤧';
-    tempControl.style.color = 'green';
-    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'grey';
+    emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
   } else if (tempValue <= 49) {
-    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'blue';
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'white';
+    emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
   }
 
-  const landscape = document.getElementById('landscapeContent');
   landscape.classList = `landscape-content ${skyColor}`;
 };
 
@@ -143,10 +142,8 @@ const changeSky = () => {
     skyColor = 'white';
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
   }
-  const landscape = document.getElementById('landscapeContent');
   landscape.classList = `landscape-content ${skyColor}`;
 };
-
 
 
 const skySelect = document.getElementById('sky-select');
@@ -162,10 +159,9 @@ const resetCity = () => {
   emojiSky.textContent = "☀️☀️🌈☀️✈️☀️🌈☀️☀️🌈☀️✈️☀️🌈☀️";
   emojiControl.textContent = '🥵😍😶‍🌫️🤧🥶'
   tempControl.textContent = '70'
-  skyColor = "green"
   tempControl.style.color = 'cornflowerblue';
+  skyColor = "green"
 
-  const landscape = document.getElementById('landscapeContent');
   landscape.classList = `landscape-content ${skyColor}`;
 };
 
