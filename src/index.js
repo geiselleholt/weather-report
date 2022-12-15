@@ -11,6 +11,7 @@ const state = {
 };
 
 // WAVE 1 and WAVE 2  ///////
+let skyColor = '';
 let tempValue = state.temp;
 const tempControl = document.querySelector('#tempValue');
 const emojiControl = document.querySelector('#emojis');
@@ -35,28 +36,31 @@ const changeTempColorAndLandscape = () => {
     tempControl.style.color = 'red';
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
-    landscapeSection = 'hot';
+    skyColor = 'hot';
   } else if (tempValue >= 70 && tempValue <= 79) {
     emojiControl.textContent = '😍😍😍😍😍😍😍';
     tempControl.style.color = 'orange';
     emojiSky.textContent = '🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️🌤️';
-    landscapeSection = 'perfect';
+    skyColor = 'perfect';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
     tempControl.style.color = 'greenyellow';
     emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
-    landscapeSection.body.style.backgroundColor  = 'rainy';
+    skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    landscapeSection.body.style.backgroundColor  = 'snowy';
+    skyColor = 'black';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'blue';
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
-    landscapeSection.body.style.backgroundColor  = 'snowy';
+    skyColor = 'snowy';
   }
+
+  const landscape = document.getElementById('landscapeContent');
+  landscape.classList = `landscape-content ${skyColor}`;
 };
 
 const upButton = document.querySelector('#increaseTempControl');
@@ -118,11 +122,9 @@ realTempButton.addEventListener('click', getLatLon);
 
 
 // Wave 5 //////
-let skyColor = '';
 
 const changeSky = () => {
   const skySelectValue = document.getElementById('sky-select').value;
-
 
   if (skySelectValue === 'The Heat Is On') {
     emojiSky.textContent = '☀️☀️☀️☀️☀️☀️☀️☀️☀️☀️';
@@ -158,9 +160,9 @@ const resetCity = () => {
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
   emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
-  landscapeSection.body.style.backgroundColor = "green"
   emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
   tempControl.textContent = '70'
+  landscapeSection.body.style.backgroundColor = "green"
 };
 
 const cityButton = document.getElementById('cityButton');
