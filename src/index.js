@@ -132,7 +132,7 @@ const changeSky = () => {
     emojiControl.textContent = '🥵🥵🥵🥵🥵🥵🥵';
   } else if (skySelectValue === 'Chasing the Clouds Away') {
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor = 'yellow';
+    skyColor = 'grey';
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
   } else if (skySelectValue === 'Purple Rain') {
     emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
