@@ -162,7 +162,11 @@ const resetCity = () => {
   emojiSky.textContent = "☀️🌈☀️🦄☀️🌈☀️☀️🌈☀️🦄☀️🌈☀️";
   emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
   tempControl.textContent = '70'
-  landscapeSection.body.style.backgroundColor = "green"
+  skyColor = "green"
+  tempControl.style.color = 'cornsilk';
+
+  const landscape = document.getElementById('landscapeContent');
+  landscape.classList = `landscape-content ${skyColor}`;
 };
 
 const cityButton = document.getElementById('cityButton');
