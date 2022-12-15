@@ -44,14 +44,14 @@ const changeTempColorAndLandscape = () => {
     skyColor = 'perfect';
   } else if (tempValue >= 60 && tempValue <= 69) {
     emojiControl.textContent = '😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️';
-    tempControl.style.color = 'greenyellow';
+    tempControl.style.color = 'purple';
     emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
     skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
     emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
     tempControl.style.color = 'green';
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
-    skyColor = 'black';
+    skyColor = 'snowy';
   } else if (tempValue <= 49) {
     emojiControl.textContent = '🥶🥶🥶🥶🥶🥶🥶';
     tempControl.style.color = 'blue';
