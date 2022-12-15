@@ -48,7 +48,7 @@ const changeTempColorAndLandscape = () => {
     emojiSky.textContent = '🌥️🌥️🌥️🌥️🌥️🌥️🌥️🌥️';
     skyColor = 'rainy';
   } else if (tempValue >= 50 && tempValue <= 59) {
-    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
+    emojiControl.textContent = '🤧🤧🤧🤧🤧🤧🤧';
     tempControl.style.color = 'green';
     emojiSky.textContent = '☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️☁️';
     skyColor = 'snowy';
@@ -137,7 +137,7 @@ const changeSky = () => {
   } else if (skySelectValue === 'Purple Rain') {
     emojiSky.textContent = '🌧💧💧💧🌧💧💧💧🌧';
     skyColor = 'rainy';
-    emojiControl.textContent = '🤢🤢🤢🤢🤢🤢🤢';
+    emojiControl.textContent = '🤧🤧🤧🤧🤧🤧🤧';
   } else if (skySelectValue === 'Ice Ice Baby') {
     emojiSky.textContent = '❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️❄️';
     skyColor = 'snowy';
