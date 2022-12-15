@@ -160,7 +160,7 @@ const resetCity = () => {
   changeCityInput.value = 'Denver';
   cityName.textContent = 'Denver';
   emojiSky.textContent = "☀️☀️🌈☀️✈️☀️🌈☀️☀️🌈☀️✈️☀️🌈☀️";
-  emojiControl.textContent = '🥵😍😶‍🌫️🤢🥶'
+  emojiControl.textContent = '🥵😍😶‍🌫️🤧🥶'
   tempControl.textContent = '70'
   skyColor = "green"
   tempControl.style.color = 'cornflowerblue';
